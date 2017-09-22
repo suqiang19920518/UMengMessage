@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thinkive.umeng.message">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59c1c7cb310c935048000012" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="5b1b82df8d4cd82beb529db3dbd62c9b" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="baidu" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TestActivity" />
+
+        <!-- 使用完全自定义消息来开启应用的服务进程的示例服务配置 -->
+        <!-- 不是必需的服务，可以根据开发者的需求进行设置 -->
+        <service android:name=".service.MyPushIntentService" />
+        <service android:name=".service.NotificationService" />
+        <service android:name=".service.UmengNotificationService" />
+        <service android:name=".service.MyNotificationService" />
+        <receiver android:name=".NotificationBroadcast" />
+    </application>
+
+</manifest>
